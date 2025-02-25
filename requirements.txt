@@ -1,0 +1,12 @@
+fastapi==0.88.0
+uvicorn==0.22.0
+pyyaml
+python-multipart
+tika
+pdfminer
+numpy
+pdf2image
+opencv-python
+pdfplumber
+# brew install poppler
+google-generativeai

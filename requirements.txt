@@ -8,5 +8,7 @@ numpy
 pdf2image
 opencv-python
 pdfplumber
+mysql-connector-python==9.2.0
+bcrypt==4.2.1
 # brew install poppler
 google-generativeai

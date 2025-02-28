@@ -1,3 +1,5 @@
+import json
+
 import google.generativeai as gemini
 
 
@@ -22,4 +24,12 @@ def extract_feature_text(texts:str):
     question = f"tôi muốn lấy thông tin tư {all_text} và trả về thông tin: {features} format lại thành json"
     response = model.generate_content(question)
     if response.text:
-        return response.text
+        # result = response.text
+        # data = json.loads(cleaned_string)
+        # formatted_json = json.dumps(data, indent=2, ensure_ascii=False)
+        # return formatted_json
+        result = response.text
+        print(result)
+        cleaned_string = result.strip("```json\n").strip("```")
+        data = json.loads(cleaned_string)  # Chuyển từ chuỗi JSON sang đối tượng Python
+        return data

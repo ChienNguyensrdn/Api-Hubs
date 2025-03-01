@@ -274,6 +274,7 @@ def pdf_extract(path):
 def doc_extract(path):
     texts = ""
     print ("-------toi day roi -----------")
+    print(path)
     parsed = parser.from_file(path)
     contents = parsed["content"]
     for text in contents.split("\n"):

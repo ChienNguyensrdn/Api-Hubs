@@ -1,6 +1,7 @@
 services:
   api:
     image: api-hubs-latest
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
@@ -22,3 +23,12 @@ services:
       MYSQL_DATABASE: api_hubs_mysql
       MYSQL_USER: api_hubs
       MYSQL_PASSWORD: api_hubs_pass
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root

@@ -5,23 +5,23 @@ import google.generativeai as gemini
 
 
 # Cấu hình GenAI với API Key trực tiếp
-api_key = ""  # API Key của bạn
+api_key = "AIzaSyC__2dYd0BeY86b6Ib9vTNdiD7aZRvU4EY"  # API Key của bạn
 gemini.configure(api_key=api_key)
 # Khởi tạo mô hình Gemini
 model = gemini.GenerativeModel('gemini-1.5-flash')
+features_map = {}
 
-features = '''
-context, Abbreviation, profession, specialty
-'''
+def register_features(feature_type: str, feature_att: str):
+    features_map[feature_type] = feature_att
 
-'''
-fullname, phone, skill, học vấn
-'''
-def extract_feature_text(texts:str):
+register_features("resume", '''context, abbreviation, profession, specialty''' '''fullname, phone, skill, education_level''')
+register_features("capstone", '''supervisors, students, capstone_project_name_in_english, capstone_project_name_in_vietnamese, context, proposed_solutions, functional_requirement, non_functional_requirement ''')
+
+def extract_feature_text(texts:str, features_type: str):
     all_text = texts
     response = model.generate_content(f"Đọc nội dung {all_text} và lưu lại thông tin không cần phẩn hồi")
     # print(response.text)
-    question = f"tôi muốn lấy thông tin tư {all_text} và trả về thông tin: {features} format lại thành json"
+    question = f"tôi muốn lấy thông tin tư {all_text} và trả về chính xác thông tin: {features_map[features_type]} ,không cần tạo thêm ngoài những thông tin này ,format lại thành json, thông tin nào không tồn tại để giá trị null."
     response = model.generate_content(question)
     if response.text:
         # result = response.text

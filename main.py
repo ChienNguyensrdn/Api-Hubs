@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
 
 import auth
+from utils.mongodb_client import MongoDbClient
 from utils.util import load_config
 from starlette.requests import Request
 import time
@@ -41,8 +42,8 @@ async def verify_api_key(
 # =====================================================
 
 # ============= Define Routes =============
-@app.post("/upload")
-async def upload(request: Request, file: UploadFile = File(...), api_key: str = Security(verify_api_key)):
+@app.post("/upload_resume")
+async def upload_resume(request: Request, file: UploadFile = File(...), api_key: str = Security(verify_api_key)):
     '''
         Upload the file to the server
         pdf, doc, docx are allowed
@@ -67,11 +68,52 @@ async def upload(request: Request, file: UploadFile = File(...), api_key: str = 
     else:
         resume_text = doc_extract(bytes(tmp_path))
     resume_text = resume_text.replace("\t", " \t")
-    print("data",extract_feature_text(resume_text))
+    # print("data",extract_feature_text(resume_text, ))
     # dicts = {}
     print("Processing ", time.time()-t0)
     os.unlink(file.filename)
-    return extract_feature_text(resume_text)
+    return extract_feature_text(resume_text, "resume")
+
+@app.post("/upload_capstone")
+async def upload_capstone(request: Request, file: UploadFile = File(...), api_key: str = Security(verify_api_key)):
+    try:
+        contents = file.file.read()
+        with open(file.filename, 'wb') as f:
+            f.write(contents)
+    except Exception:
+        return {"message": "There was an error uploading the file"}
+    finally:
+        file.file.close()
+    # Khởi tạo connection mongoDb
+    mongodb = MongoDbClient().get_db()
+    collections = mongodb["capstone_idea"]
+
+    # Lấy Project_code
+    tmp_path = file.filename
+    if ".pdf" in str(tmp_path):
+        resume_text,ImageBase64 = pdf_extract(tmp_path)
+    else:
+        resume_text = doc_extract(bytes(tmp_path.encode("utf8")))
+    resume_text = resume_text.replace("\t", " \t")
+    project_code = tmp_path[:9]
+    print("Project Code: ", project_code)
+
+    # Kiểm Project_code có tồn tại chưa
+    found_project_code = collections.find_one({"project_code": project_code})
+
+    if found_project_code is not None:
+        raise HTTPException(status_code=400, detail="This capstone project code already exists")
+    t0 = time.time()
+    print("Processing ", time.time() - t0)
+    os.unlink(file.filename)
+    result = extract_feature_text(resume_text, "capstone")
+
+
+    collections.insert_one({
+        **result,
+        "project_code":project_code,
+    })
+    return result
 
 @app.post("/generate_api_keys")
 async def generate_api_keys(account_name: str = Form(...), account_password: str = Form(...)):

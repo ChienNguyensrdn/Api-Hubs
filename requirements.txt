@@ -11,5 +11,7 @@ pdfplumber
 mysql-connector-python==9.2.0
 pymongo~=4.11.1
 bcrypt==4.2.1
+scikit-learn
+pandas==2.2.3
 # brew install poppler
 google-generativeai

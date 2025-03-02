@@ -5,7 +5,7 @@ import google.generativeai as gemini
 
 
 # Cấu hình GenAI với API Key trực tiếp
-api_key = "AIzaSyC__2dYd0BeY86b6Ib9vTNdiD7aZRvU4EY"  # API Key của bạn
+api_key = ""  # API Key của bạn
 gemini.configure(api_key=api_key)
 # Khởi tạo mô hình Gemini
 model = gemini.GenerativeModel('gemini-1.5-flash')

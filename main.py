@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI, Form, File, UploadFile, Header, HTTPException, Security
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import APIKeyHeader
+from pydantic import BaseModel
 
 import auth
 from utils.mongodb_client import MongoDbClient
@@ -11,6 +12,7 @@ import time
 import os
 from utils.extract_text import pdf_extract, doc_extract
 from utils.gemini_service import extract_feature_text
+import recommender_system as recommender
 origins = [
     "*"
 ]
@@ -115,6 +117,16 @@ async def upload_capstone(request: Request, file: UploadFile = File(...), api_ke
     })
     return result
 
+# class model for recommder
+class CandidateInput(BaseModel):
+    candidate_input: str
+@app.post("/recommend_jobs")
+async def recommend_jobs(data: CandidateInput, api_key: str = Security(verify_api_key)):
+    return recommender.recommend_jobs(data.candidate_input)
+
+@app.post("/recommend_users")
+async def recommend_users(data: CandidateInput):
+    return recommender.recommend_jobs(data.candidate_input)
 @app.post("/generate_api_keys")
 async def generate_api_keys(account_name: str = Form(...), account_password: str = Form(...)):
     return auth.generate_api_key(account_name, account_password)

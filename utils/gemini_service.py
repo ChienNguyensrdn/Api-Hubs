@@ -2,10 +2,12 @@ import json
 
 import google.generativeai as gemini
 
+from utils.util import load_config
 
-
+CONFIG_PATH = "configs/config.yaml"
+config = load_config(CONFIG_PATH)
 # Cấu hình GenAI với API Key trực tiếp
-api_key = ""  # API Key của bạn
+api_key = config["GEMINI_API_KEY"]  # API Key của bạn
 gemini.configure(api_key=api_key)
 # Khởi tạo mô hình Gemini
 model = gemini.GenerativeModel('gemini-1.5-flash')

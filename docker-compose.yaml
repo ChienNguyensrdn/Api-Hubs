@@ -1,12 +1,16 @@
 services:
+  app:
+    container_name: nginx
+    image: public.ecr.aws/nginx/nginx:stable-perl
+    ports:
+      - "80:80"
   api:
-    image: api-hubs-latest
-    restart: always
+#    image: gcr.io/api-hubs/api-hubs:latest
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9001:9000"
+      - "9000:9000"
     volumes:
       - ./:/app
       - ../../../.ssh:/.ssh
@@ -17,7 +21,7 @@ services:
     image: mysql:8.0
     container_name: api_hubs_mysql
     ports:
-      - "30306:3306"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root_pass
       MYSQL_DATABASE: api_hubs_mysql

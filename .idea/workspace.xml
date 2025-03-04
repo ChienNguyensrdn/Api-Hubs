@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="827f49b5-9406-41b8-b10d-86c469103579" name="Changes" comment="gitignoore">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Api-Hubs.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP25SE197_SmashLeague - A Platform for Supporting and Organizing Sports _HoangNT.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommender_system.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/SP25SE013_Agricultural Supply Distribution Management Software_ChienNV33.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/SP25SE019_DevEval AI - Machine Learning-Powered Developer Skills Assessment Platform_Hungld5.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/SP25SE034_IoTS-IoT Materials Trading Platform with Assembly Instructions_TriPT9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/SP25SE038_GameMkt - A Platform for Game Development and Marketing_Tript9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/SP25SE042_DaiVietCat - Men’s haircut booking and customer management system_DuongVTT9.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/SP25SE061_Application to schedule nursing appointments at home_PhucNT40.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/clear_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/extract_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/gemini_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/http-client.private.env.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/mongodb_client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/util.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="letanloc" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;loctodale&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ChienNguyensrdn/Api-Hubs.git&quot;,
+    &quot;accountId&quot;: &quot;d7e05634-fcbe-4bf0-96a8-240a2bcc58fe&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2trNf2GlTvMnBhDxLh2AuHUDLMH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "letanloc-deploy",
+    "last_opened_file_path": "C:/Users/loctodale/source/repos/backup/Api-Hubs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\loctodale\source\repos\backup\Api-Hubs" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="827f49b5-9406-41b8-b10d-86c469103579" name="Changes" comment="" />
+      <created>1741106332517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741106332517</updated>
+      <workItem from="1741106333870" duration="1355000" />
+    </task>
+    <task id="LOCAL-00001" summary="gitignoore">
+      <option name="closed" value="true" />
+      <created>1741106478007</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741106478007</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gitignoore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignoore" />
+  </component>
+</project>

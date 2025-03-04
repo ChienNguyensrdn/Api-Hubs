@@ -5,15 +5,14 @@ services:
     ports:
       - "80:80"
   api:
-#    image: gcr.io/api-hubs/api-hubs:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: loctodaleservice/api-hubs-latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
     ports:
       - "9000:9000"
-    volumes:
-      - ./:/app
-      - ../../../.ssh:/.ssh
+#    volumes:
+#      - ./:/app
     environment:
       - PYTHONUNBUFFERED=1
 
